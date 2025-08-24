@@ -1,0 +1,49 @@
+Language: Cpp
+BasedOnStyle: Google
+
+ColumnLimit: 80
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+
+IndentPPDirectives: AfterHash
+SpaceAfterTemplateKeyword: true
+SpacesInAngles: Leave
+FixNamespaceComments: false
+AlwaysBreakTemplateDeclarations: MultiLine
+BreakTemplateDeclarations: Yes
+
+InsertNewlineAtEOF: true
+NamespaceIndentation: All
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterNamespace: true
+  BeforeElse: true
+
+AllowBreakBeforeNoexceptSpecifier: Always
+EmptyLineBeforeAccessModifier: Leave
+ExperimentalAutoDetectBinPacking: true
+
+BreakBeforeBinaryOperators: NonAssignment
+PenaltyReturnTypeOnItsOwnLine: 0
+PenaltyBreakOpenParenthesis: 5
+PenaltyBreakBeforeFirstCallParameter: 5
+PenaltyBreakString: 100
+AlignAfterOpenBracket: BlockIndent
+AllowAllParametersOfDeclarationOnNextLine: true
+BinPackArguments: true
+BinPackParameters: false
+AllowAllArgumentsOnNextLine: true
+RequiresClausePosition: WithPreceding
+IncludeBlocks: Preserve
+SortIncludes: Never
+
+
+AlignConsecutiveAssignments: Consecutive
+IfMacros:
+  - when
+
+ReflowComments: false
+PenaltyBreakComment: 100000
+AllowShortCompoundRequirementOnASingleLine: true
