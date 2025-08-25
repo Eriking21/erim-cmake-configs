@@ -6,7 +6,7 @@
             "displayName": "ArchLinux Clang 20.1.8",
             "description": "Using compilers: C = /usr/bin/clang, CXX = /usr/bin/clang++",
             "binaryDir": "${sourceDir}/build/${presetName}",
-            "toolchainFile": "toolchain.cmake",
+            "toolchainFile": "erim-toolchain.cmake",
             "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
@@ -20,7 +20,7 @@
             "displayName": "Ubuntu clang 20.1.8",
             "description": "Using compilers: C = /usr/bin/clang-20, CXX = /usr/bin/clang++-20",
             "binaryDir": "${sourceDir}/build/${presetName}",
-            "toolchainFile": "toolchain.cmake",
+            "toolchainFile": "erim-toolchain.cmake",
             "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
@@ -34,7 +34,7 @@
             "displayName": "Windows Clang 19.1.5",
             "description": "Using compilers: C = C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe, CXX = C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
             "binaryDir": "${sourceDir}/build/${presetName}",
-            "toolchainFile": "toolchain.cmake",
+            "toolchainFile": "erim-toolchain.cmake",
             "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
@@ -48,7 +48,7 @@
             "displayName": "Windows Clang 20.1.8",
             "description": "Using compilers: C = C:\\Program Files\\LLVM\\bin\\clang.exe, CXX = C:\\Program Files\\LLVM\\bin\\clang++.exe",
             "binaryDir": "${sourceDir}/build/${presetName}",
-            "toolchainFile": "toolchain.cmake",
+            "toolchainFile": "erim-toolchain.cmake",
             "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
