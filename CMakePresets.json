@@ -2,6 +2,20 @@
     "version": 8,
     "configurePresets": [
         {
+            "name": "Default Clang",
+            "displayName": "Default Clang",
+            "description": "Using compilers: C = C:\\Program Files\\LLVM\\bin\\clang.exe, CXX = C:\\Program Files\\LLVM\\bin\\clang++.exe",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "toolchainFile": "erim-toolchain.cmake",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+                "CMAKE_C_COMPILER": "clang.exe",
+                "CMAKE_CXX_COMPILER": "clang++.exe",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
             "name": "ArchLinux Clang 20.1.8",
             "displayName": "ArchLinux Clang 20.1.8",
             "description": "Using compilers: C = /usr/bin/clang, CXX = /usr/bin/clang++",
