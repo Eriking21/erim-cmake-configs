@@ -4,70 +4,14 @@
         {
             "name": "Default Clang",
             "displayName": "Default Clang",
-            "description": "Using compilers: C = C:\\Program Files\\LLVM\\bin\\clang.exe, CXX = C:\\Program Files\\LLVM\\bin\\clang++.exe",
+            "description": "Default Clang toolchain with Debug build type",
             "binaryDir": "${sourceDir}/build/${presetName}",
             "toolchainFile": "erim-toolchain.cmake",
             "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
-                "CMAKE_C_COMPILER": "clang.exe",
-                "CMAKE_CXX_COMPILER": "clang++.exe",
-                "CMAKE_BUILD_TYPE": "Debug"
-            }
-        },
-        {
-            "name": "ArchLinux Clang 20.1.8",
-            "displayName": "ArchLinux Clang 20.1.8",
-            "description": "Using compilers: C = /usr/bin/clang, CXX = /usr/bin/clang++",
-            "binaryDir": "${sourceDir}/build/${presetName}",
-            "toolchainFile": "erim-toolchain.cmake",
-            "generator": "Ninja",
-            "cacheVariables": {
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
-                "CMAKE_C_COMPILER": "/usr/bin/clang",
-                "CMAKE_CXX_COMPILER": "/usr/bin/clang++",
-                "CMAKE_BUILD_TYPE": "Debug"
-            }
-        },
-        {
-            "name": "Ubuntu clang 20.1.8",
-            "displayName": "Ubuntu clang 20.1.8",
-            "description": "Using compilers: C = /usr/bin/clang-20, CXX = /usr/bin/clang++-20",
-            "binaryDir": "${sourceDir}/build/${presetName}",
-            "toolchainFile": "erim-toolchain.cmake",
-            "generator": "Ninja",
-            "cacheVariables": {
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
-                "CMAKE_C_COMPILER": "/usr/bin/clang-20",
-                "CMAKE_CXX_COMPILER": "/usr/bin/clang++-20",
-                "CMAKE_BUILD_TYPE": "Debug"
-            }
-        },
-        {
-            "name": "Windows clang 19 gnu",
-            "displayName": "Windows Clang 19.1.5",
-            "description": "Using compilers: C = C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe, CXX = C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
-            "binaryDir": "${sourceDir}/build/${presetName}",
-            "toolchainFile": "erim-toolchain.cmake",
-            "generator": "Ninja",
-            "cacheVariables": {
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
-                "CMAKE_C_COMPILER": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/Llvm/x64/bin/clang.exe",
-                "CMAKE_CXX_COMPILER": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/Llvm/x64/bin/clang.exe",
-                "CMAKE_BUILD_TYPE": "Debug"
-            }
-        },
-        {
-            "name": "Windows Clang 20.1.8",
-            "displayName": "Windows Clang 20.1.8",
-            "description": "Using compilers: C = C:\\Program Files\\LLVM\\bin\\clang.exe, CXX = C:\\Program Files\\LLVM\\bin\\clang++.exe",
-            "binaryDir": "${sourceDir}/build/${presetName}",
-            "toolchainFile": "erim-toolchain.cmake",
-            "generator": "Ninja",
-            "cacheVariables": {
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
-                "CMAKE_C_COMPILER": "C:/Program Files/LLVM/bin/clang.exe",
-                "CMAKE_CXX_COMPILER": "C:/Program Files/LLVM/bin/clang++.exe",
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++",
                 "CMAKE_BUILD_TYPE": "Debug"
             }
         }
