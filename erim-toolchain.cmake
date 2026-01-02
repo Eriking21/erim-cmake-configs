@@ -9,10 +9,10 @@ if(DEFINED ENV{EMSDK} AND (CMAKE_C_COMPILER_ID STREQUAL "Emscripten" OR CMAKE_CX
 endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE BOOL "Export compile commands" FORCE)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED OFF)
-set(CMAKE_C_STANDARD_REQUIRED OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_C_EXTENSIONS OFF)
 set(CMAKE_VERBOSE_MAKEFILE ON)
@@ -134,26 +134,26 @@ function(__erim_create_target target_name ...)
     set("${target_name}_libs" "${target_libs}" PARENT_SCOPE)
 endfunction()
 
-function(__erim_prebuild_modules)
+function(__erim_prebuild_cxx_modules)
     get_property(all_targets DIRECTORY ${PROJECT_SOURCE_DIR} PROPERTY BUILDSYSTEM_TARGETS)
     set(all_interfaces)
     foreach(target IN LISTS all_targets)
         get_target_property(target_type ${target} TYPE)
         get_target_property(target_srcs ${target} SOURCES)
-        if(${target_type} STREQUAL "STATIC_LIBRARY")
+        if (${target_type} STREQUAL "STATIC_LIBRARY")
             if(${target_srcs} STREQUAL "target_srcs-NOTFOUND")
-                list(APPEND all_interfaces "--target ${target}")
+                list(APPEND all_interfaces ${target})
             endif()
         endif()
     endforeach()
-    if(all_interfaces)
-        message("out: ${all_interfaces}")
-        execute_process(
-            COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR} --parallel
-            ${all_interfaces}
-        )
-    endif()
-endfunction()
+    add_custom_target(erim_prebuild_cxx_modules DEPENDS ${all_interfaces})
+    execute_process(
+        COMMAND "${CMAKE_COMMAND}"
+        --build "${CMAKE_BINARY_DIR}"
+        --parallel
+        --target erim_prebuild_cxx_modules
+    )
+endfunction(__erim_prebuild_cxx_modules)
 
 function(ERIM_SET_SYSTEM_INCLUDES)
     string(REGEX REPLACE "/usr/bin/" "" COMPILER ${CMAKE_C_COMPILER})
